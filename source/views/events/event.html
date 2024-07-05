@@ -1,96 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evento</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
 </head>
+
 <body>
-    <nav>
-        <li><img src="icons/hamburguesaBlanco.png" alt="icono de menu"></li>
-        <li><p>Logo</p></li>
-      
-        <li>
-            <p>UserName</p>
-        </li>
-        <li>
-            <img src="icons/logoutBlanco.png" alt="">
-        </li>
-    </nav>
-    <section class="event">
-        <img class="event__img" src="" alt="imagen del evento">
+    <header>
+        <section class="header__navBar header__navBar--blanco">
+            <nav>
+                <li><img src="/public/icons/hamburguesa.png" alt="icono de menu"></li>
+                <li><a href="/public/index.html">Logo</a></li>
+                <li>
+                    <a href="/source/views/user/profile.html">UserName</a>
+                </li>
+                <li>
+                    <img src="/public/icons/logout.png" alt="">
+                </li>
+            </nav>
+        </section>
+    </header>
+
+
+    <section class="event contenedor">
+        <img class="event__img" src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento">
         <div class="event__data">
             <h2 class="data__title">Titulo del evento</h2>
             <p class="data__description">Descripcion</p>
-            <p class="data__location">Ubicacion<img src="" alt=""></p>
-            <p class="data__date">Fecha<img src="" alt=""></p>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <div class="card__date">
+                <p>Fecha</p>
+                <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+            </div>
             <div class="event__ticket">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="input__seleccion">
                 <p>VIP</p>
-                <input type="number" name="" id="">
+                <input id="input__cantidad" type="number" max="5">
             </div>
             <div class="event__ticket">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="input__seleccion" >
                 <p>General</p>
-                <input type="number" name="" id="">
+                <input id="input__cantidad" type="number" max="5">
             </div>
-            <p class="event__price">$70</p>
-            <input type="button" value="Pagar">
+            <p class="price">$</p>
+            <input class="btn btn-principal" type="button" value="Pagar">
         </div>
     </section>
-    <section class="othereEvents">
-        <h3>Eventos Relacionados</h3>
+    <h3>Eventos Relacionados</h3>
+    <section class="events contenedor">
         <div class="card">
-            <img src="" alt="" class="card__image"></img>
-            <h4 class="card__title">titulo</h4>
-            <p>Fecha<img src="" alt="icono de calendario"></p>
-            <p>Ubicacion<img src="" alt="icono de ubicacion"></p>
-            <p class="event__price">$70</p>
-            <input type="button" value="Ver Más">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
         </div>
         <div class="card">
-            <img src="" alt="" class="card__image"></img>
-            <h4 class="card__title">titulo</h4>
-            <p>Fecha<img src="" alt="icono de calendario"></p>
-            <p>Ubicacion<img src="" alt="icono de ubicacion"></p>
-            <p class="event__price">$70</p>
-            <input type="button" value="Ver Más">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
         </div>
         <div class="card">
-            <img src="" alt="" class="card__image"></img>
-            <h4 class="card__title">titulo</h4>
-            <p>Fecha<img src="" alt="icono de calendario"></p>
-            <p>Ubicacion<img src="" alt="icono de ubicacion"></p>
-            <p class="event__price">$70</p>
-            <input type="button" value="Ver Más">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
         </div>
         <div class="card">
-            <img src="" alt="" class="card__image"></img>
-            <h4 class="card__title">titulo</h4>
-            <p>Fecha<img src="" alt="icono de calendario"></p>
-            <p>Ubicacion<img src="" alt="icono de ubicacion"></p>
-            <p class="event__price">$70</p>
-            <input type="button" value="Ver Más">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
         </div>
     </section>
     <footer>
         <div class="footer__menu">
-            <ul>
-                <li><a href="#header">Inicio</a></li>
-                <li><a href="#reventa">Reventa</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-            </ul>
+            <li><a href="/public/index.html">Inicio</a></li>
+            <li><a href="">Reventa</a></li>
+            <li><a href="">Eventos</a></li>
         </div>
         <div class="footer__logo">
             <p>logo</p>
         </div>
         <div class="footer__redes">
-            <li><img src="images/logos/" alt="logo de instagram"></li>
-            <li><img src="images/logos/" alt="logo de tiktok"></li>
-            <li><img src="images/logos/" alt="logo de X"></li>
+            <li><img src="/public/images/logos/redesSociales__insta.png" alt="logo de instagram"></li>
+            <li><img src="/public/images/logos/redesSociales__tiktok.png" alt="logo de tiktok"></li>
+            <li><img src="/public/images/logos/redesSociales__x.png" alt="logo de X"></li>
         </div>
         <hr>
         <p>© 2021 TicketMaster</p>
-    </footer>  
+    </footer>
 </body>
+
 </html>

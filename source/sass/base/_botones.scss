@@ -1,0 +1,33 @@
+
+.btn{
+    width: 200px;
+    height: 40px;
+    padding: 8px;
+    margin: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-principal{
+    background-color: $rojo500;
+    color: $blanco;
+}
+
+.btn-principal:hover {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: $rojo600;
+}
+
+.btn-secundario{
+    background-color:transparent;
+    color: $gris100;
+    border: 1px solid $gris100;
+}
+.btn-secundario:hover {
+    cursor: pointer;
+    color: $rojo500;
+    transition: background-color 0.3s;
+    background-color: $blanco;
+}

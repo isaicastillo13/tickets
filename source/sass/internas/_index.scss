@@ -1,0 +1,37 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    background-color: $rojo500;
+    border-radius: 16px;
+    padding: 10px;
+    color: $blanco;
+    box-shadow: 0px 6px 4px rgba(24, 24, 27, .25) inset;
+
+    h2 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    p {
+        color: $blanco;
+        font-weight: 200;
+        text-align: center;
+    }
+}
+
+.event__title {
+    font-weight: 600;
+    color: $gris400;
+    margin: 24px;
+    text-align: start;
+}
+
+.events {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
