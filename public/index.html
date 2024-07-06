@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-        <header class="header">
+        <header class="header" id="header">
             <section class="header__navBar">
                 <nav>
                     <li><img src="icons/hamburguesaBlanco.png" alt="icono de menu"></li>
-                    <li><a href="index.html">Logo</a></li>
+                    <li><a href="/public/index.html">Logo</a></li>
                     <li>
                         <div class="searchBar">
                             <input  type="search" placeholder="Buscar">
@@ -21,7 +21,7 @@
                         <a href="/source/views/user/profile.html">UserName</a>
                     </li>
                     <li>
-                        <img src="icons/logoutBlanco.png" alt="icono del logout">
+                        <img src="icons/logoutBlanco.png" alt="icono del logout" id="logout">
                     </li>
                 </nav>
             </section>
@@ -34,7 +34,7 @@
                     <p class="info__description">
                         Descubre una amplia variedad de eventos, desde conciertos y partidos de fútbol hasta obras de teatro y conferencias. Nuestra plataforma te permite no solo comprar entradas de manera segura y fácil, sino también vender boletos que ya no puedas usar. Únete a nuestra comunidad de entusiastas de los eventos y asegura tu lugar en las mejores experiencias.
                     </p>
-                    <input type="button" class="btn btn-principal" value="Ver Eventos">
+                    <a href="#events__main" class="btn btn-principal">Ver Eventos</a>
                 </section>
 
                 <section class="header__redes">
@@ -49,7 +49,7 @@
         <section class="banner contenedor" id="resale">
             <h2 class="banner__title">Revanta</h2>
             <p class="banner__description">¿Te perdiste la venta oficial? No te preocupes, aún puedes conseguir boletos para tus eventos favoritos. Explora nuestra sección de resale para encontrar entradas de última hora a precios competitivos. Aprovecha esta oportunidad para asegurar tu lugar y no te pierdas ninguna experiencia increíble.</p>
-            <input class="btn resale__btn btn-secundario" type="button" value="Ir a la Reventa">
+            <a href="/source/views/tickets/resale.html" class="btn btn-secundario">Ir a la Reventa</a>
         </section>
 
         <h3 class="event__title contenedor">Proximos Eventos</h3>
@@ -68,7 +68,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -84,7 +84,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -100,7 +100,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -116,7 +116,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -132,7 +132,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -148,7 +148,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -164,7 +164,7 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
             <div class="card">
                 <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
@@ -180,14 +180,14 @@
                     <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <p class="card__precio"> $ Precio</p>
-                <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
             </div>
         </main>
         <footer>
             <div class="footer__menu">
                     <li><a href="#header">Inicio</a></li>
-                    <li><a href="#reventa">Reventa</a></li>
-                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#resale">Reventa</a></li>
+                    <li><a href="#events__main">Eventos</a></li>
             </div>
             <div class="footer__logo">
                 <p>logo</p>
