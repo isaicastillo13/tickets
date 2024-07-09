@@ -1,204 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-        <header class="header" id="header">
-            <section class="header__navBar">
-                <nav>
-                    <li><img src="icons/hamburguesaBlanco.png" alt="icono de menu"></li>
-                    <li><a href="/public/index.html">Logo</a></li>
-                    <li>
-                        <div class="searchBar">
-                            <input  type="search" placeholder="Buscar">
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/source/views/user/profile.html">UserName</a>
-                    </li>
-                    <li>
-                        <img src="icons/logoutBlanco.png" alt="icono del logout" id="logout">
-                    </li>
-                </nav>
-            </section>
-
-            <section class="header__data">
-                <section class="header__info">
-                    <h1 class="info__title">
-                        Compra y Vende Boletos para Todos tus Eventos Favoritos
-                    </h1>
-                    <p class="info__description">
-                        Descubre una amplia variedad de eventos, desde conciertos y partidos de fútbol hasta obras de teatro y conferencias. Nuestra plataforma te permite no solo comprar entradas de manera segura y fácil, sino también vender boletos que ya no puedas usar. Únete a nuestra comunidad de entusiastas de los eventos y asegura tu lugar en las mejores experiencias.
-                    </p>
-                    <a href="#events__main" class="btn btn-principal">Ver Eventos</a>
-                </section>
-
-                <section class="header__redes">
-                    <li><img src="images/logos/redesSociales__insta.png" alt="logo de instagram"></li>
-                    <li><img src="images/logos/redesSociales__tiktok.png" alt="logo de tiktok"></li>
-                    <li><img src="images/logos/redesSociales__x.png" alt="logo de X"></li>
-                </section>
-            </section>
-
-        </header>
-
-        <section class="banner contenedor" id="resale">
-            <h2 class="banner__title">Revanta</h2>
-            <p class="banner__description">¿Te perdiste la venta oficial? No te preocupes, aún puedes conseguir boletos para tus eventos favoritos. Explora nuestra sección de resale para encontrar entradas de última hora a precios competitivos. Aprovecha esta oportunidad para asegurar tu lugar y no te pierdas ninguna experiencia increíble.</p>
-            <a href="/source/views/tickets/resale.html" class="btn btn-secundario">Ir a la Reventa</a>
+    <header class="header" id="header">
+        <section class="header__navBar">
+            <nav>
+                <li><img src="icons/hamburguesaBlanco.png" alt="icono de menu"></li>
+                <li><a href="/public/index.html">Logo</a></li>
+                <li>
+                    <div class="searchBar">
+                        <input type="search" placeholder="Buscar">
+                    </div>
+                </li>
+                <li>
+                    <a href="../source/views/user/profile.html">UserName</a>
+                </li>
+                <li>
+                    <img src="icons/logoutBlanco.png" alt="icono del logout" id="logout">
+                </li>
+            </nav>
         </section>
 
-        <h3 class="event__title contenedor">Proximos Eventos</h3>
-        <main class="events contenedor" id="events__main">
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-            <div class="card">
-                <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-                <div class="card__header">
-                    <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                    <div class="card__date">
-                        <p>Fecha</p>
-                        <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
-                    </div>
-                </div>
-                <div class="card__location">
-                    <p>Ubicacion</p>
-                    <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-                </div>
-                <p class="card__precio"> $ Precio</p>
-                <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-            </div>
-        </main>
-        <footer>
-            <div class="footer__menu">
-                    <li><a href="#header">Inicio</a></li>
-                    <li><a href="#resale">Reventa</a></li>
-                    <li><a href="#events__main">Eventos</a></li>
-            </div>
-            <div class="footer__logo">
-                <p>logo</p>
-            </div>
-            <div class="footer__redes">
+        <section class="header__data">
+            <section class="header__info">
+                <h1 class="info__title">
+                    Compra y Vende Boletos para Todos tus Eventos Favoritos
+                </h1>
+                <p class="info__description">
+                    Descubre una amplia variedad de eventos, desde conciertos y partidos de fútbol hasta obras de teatro
+                    y conferencias. Nuestra plataforma te permite no solo comprar entradas de manera segura y fácil,
+                    sino también vender boletos que ya no puedas usar. Únete a nuestra comunidad de entusiastas de los
+                    eventos y asegura tu lugar en las mejores experiencias.
+                </p>
+                <a href="#events__main" class="btn btn-principal">Ver Eventos</a>
+            </section>
+
+            <section class="header__redes">
                 <li><img src="images/logos/redesSociales__insta.png" alt="logo de instagram"></li>
                 <li><img src="images/logos/redesSociales__tiktok.png" alt="logo de tiktok"></li>
                 <li><img src="images/logos/redesSociales__x.png" alt="logo de X"></li>
+            </section>
+        </section>
+
+    </header>
+
+    <section class="banner contenedor" id="resale">
+        <h2 class="banner__title">Revanta</h2>
+        <p class="banner__description">¿Te perdiste la venta oficial? No te preocupes, aún puedes conseguir boletos para
+            tus eventos favoritos. Explora nuestra sección de resale para encontrar entradas de última hora a precios
+            competitivos. Aprovecha esta oportunidad para asegurar tu lugar y no te pierdas ninguna experiencia
+            increíble.</p>
+        <a href="/source/views/tickets/resale.html" class="btn btn-secundario">Ir a la Reventa</a>
+    </section>
+
+    <h3 class="event__title contenedor">Proximos Eventos</h3>
+    <main class="events contenedor" id="events__main">
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
             </div>
-            <hr>
-            <p>© 2021 TicketMaster</p>
-        </footer>   
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+        <div class="card">
+            <img src="/public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
+                class="card__image"></img>
+            <div class="card__header">
+                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
+                <div class="card__date">
+                    <p>Fecha</p>
+                    <img src="/public/icons/fecha__icono.png" alt="icono de calendario">
+                </div>
+            </div>
+            <div class="card__location">
+                <p>Ubicacion</p>
+                <img src="/public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+            </div>
+            <p class="card__precio"> $ Precio</p>
+            <a href="/source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__menu">
+            <li><a href="#header">Inicio</a></li>
+            <li><a href="#resale">Reventa</a></li>
+            <li><a href="#events__main">Eventos</a></li>
+        </div>
+        <div class="footer__logo">
+            <p>logo</p>
+        </div>
+        <div class="footer__redes">
+            <li><img src="images/logos/redesSociales__insta.png" alt="logo de instagram"></li>
+            <li><img src="images/logos/redesSociales__tiktok.png" alt="logo de tiktok"></li>
+            <li><img src="images/logos/redesSociales__x.png" alt="logo de X"></li>
+        </div>
+        <hr>
+        <p>© 2021 TicketMaster</p>
+    </footer>
 </body>
+
 </html>
