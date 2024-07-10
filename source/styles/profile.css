@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ************************** NAVBAR ************************** */
+* {
+ font-size: 20px;
+}
+
+nav {
+ padding-bottom: 10px;
+ display: flex;
+ /* border: 2px solid red; */
+}
+
+ul {
+ /* border: 1px solid; */
+ border-radius: 5px;
+ width: 100%;
+ padding: 0;
+ margin: 0;
+ display: flex;
+ justify-content: space-between;
+ /* border: 2px solid blue; */
+}
+li {
+ width: 42%;
+ display: flex;
+ padding: 10px;
+ align-items: center;
+ /* border: 2px solid rgb(104, 198, 32); */
+}
+.user {
+ justify-content: end;
+}
+.start-end {
+ width: 8%;
+ justify-content: center;
+}
+
+img {
+ width: 25px;
+ height: 20px;
+}
+
+/* ************************** HEAD_PROFILE ************************** */
+.div_nombre {
+ /* border: 2px solid yellowgreen; */
+ display: flex;
+ justify-content: center;
+}
+
+.name_txt {
+ color: aliceblue;
+ font-family: sans-serif;
+ font-size: 30px;
+
+ margin: 0;
+ padding: 5%;
+ /* border: 2px solid yellowgreen; */
+ width: 85%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ background-color: #dc2626;
+ border-radius: 10px;
+}
+
+/* ************************** FORM_NUEVO EVENTO ************************** */
+
+form {
+ margin-top: 15px;
+ /* border: 2px solid blue; */
+ display: flex;
+ flex-direction: column;
+ /* justify-content: center; */
+ align-items: center;
+}
+
+.title_form_event {
+ /* border: 2px solid yellowgreen; */
+ margin: 0;
+ margin-top: 10px;
+ margin-bottom: 30px;
+ width: 90%;
+ display: flex;
+ justify-content: center;
+ font-size: 30px;
+}
+
+.div_new_event {
+ border: 2px solid #e7e7e7;
+ border-radius: 10px;
+ padding: 15px;
+ padding-bottom: 25px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: end;
+ width: 60%;
+}
+
+.form_lbl_event {
+ /* border: 2px solid blue; */
+ width: 69%;
+ margin-bottom: 10px;
+}
+
+input {
+ border: 2px solid #e7e7e7;
+ margin-bottom: 20px;
+ border-radius: 5px;
+ width: 70%;
+ height: 25px;
+ font-size: 15px;
+}
+
+textarea {
+ margin-bottom: 20px;
+ width: 70%;
+ border: 2px solid #e7e7e7;
+ border-radius: 5px;
+}
+
+.form_btn_publicar {
+ width: 25%;
+ height: 35px;
+ font-size: 15px;
+ font-weight: bold;
+ border: none;
+ border-radius: 5px;
+ color: #ffffff;
+ background-color: #ef4444;
+}

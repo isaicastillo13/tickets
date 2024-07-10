@@ -5,48 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil</title>
-    <link rel="stylesheet" href="styles/formularios.css">
-    <link rel="stylesheet" href="styles/perfil.css">
+    <link rel="stylesheet" href="styles/formliarios.css">
+    <link rel="stylesheet" href="../../styles/profile.css">
 </head>
 
 <body>
-        <nav>
-            <li><img src="icons/hamburguesaBlanco.png" alt="icono de menu"></li>
-            <li><p>Logo</p></li>
-          
-            <li>
-                <p>UserName</p>
+
+    <nav>
+        <!-- <li><img src="../../../public/icons/hamburguesa.png" alt="icono de menu"></li>
+        <li>
+            <p>Logo</p>
+        </li>
+
+        <li>
+            <p>UserName</p>
+        </li>
+        <li>
+            <img src="../../../public/icons/logout.png" alt="">
+        </li> -->
+        <!-- **************************************************************************** -->
+        <ul>
+            <li class="start-end">
+                <a href="https://www.google.com/">
+                    <img src="../../../public/icons/hamburguesa.png" alt="icono de menu">
+                </a>
             </li>
             <li>
-                <img src="icons/logoutBlanco.png" alt="">
+                <!-- <span>
+                </span> -->
+                Logo
             </li>
-        </nav>
+            <li class="user">
+                UserName
+            </li>
+            <li class="start-end">
+                <a href="https://www.google.com/">
+                    <img src="../../../public/icons/logout.png" alt="icono logout">
+                </a>
+            </li>
+            <!-- <li></li> -->
+        </ul>
+    </nav>
 
     <section class="perfil">
-        <div id="perfil__min">
-            <img src="img/perfil/StockSnap_XUITRGCOXL.jpg" id="fondoPerfil"></img>
-            <h2 id="userName__perfil"></h2>
+        <div id="perfil__min" class="div_nombre">
+            <!-- <img src="../../../public/images/perfil/StockSnap_XUITRGCOXL.jpg" id="fondoPerfil" alt="fondo perfil"></img> -->
+            <h2 id="userName__perfil" class="name_txt">Nombre de Usuario</h2>
         </div>
-        <form class="form" id="perfil__form__addVEvent">
-            <h2>Agregar Envento</h2>
-            <div id="name">
+
+        <form class="form__addEvent" id="perfil__form__addVEvent">
+            <!-- <div id="name">
                 <label class="form__label" for="nombre">Nombre de Usuario</label>
                 <input class="form__input" type="text" name="nombre" id="perfil__name" value="" disabled>
                 <button class="form__boton" id="pefil__btn--edit" type="button">Editar</button>
-            </div>
-            <div id="password">
-                <label class="form__label" for="password">Contraseña Actual</label>
-                <input class="form__input" type="password" name="password" id="perfil__password" disabled>
+            </div> -->
+            <div id="nuevo_evento" class="div_new_event">
+                <h2 class="title_form_event">Agregar Envento</h2>
+                <label class="form_lbl_event" for="evento-t">Evento (título)</label>
+                <input class="form__input" type="text" name="evento" id="eventoid">
 
-                <label class="form__label" for="password">Contraseña Nueva</label>
-                <input class="form__input" type="password" name="passwordNew" id="perfil__passwordNew" disabled>
+                <label class="form_lbl_event" for="fechaevento">Fecha</label>
+                <input class="form_input" type="date" name="fecha__e" id="fecha__eid">
 
-                <label class="form__label" for="password">Validar</label>
-                <input class="form__input" type="password" name="passwordValidate" id="perfil__passwordValidate" disabled>
+                <label class="form_lbl_event" for="txt">Descripción</label>
+                <textarea name="text_des" id="text_des_id" rows="10"></textarea>
 
-                <button class="form__boton" id="pefil__btn--changePass" type="button">Cambiar contraseña</button>
+                <!-- <input class="form__input" type="text" name="text__d" id="text__did"> -->
+                <button class="form_btn_publicar" id="pefil__btn_publicar" type="button">Publicar</button>
             </div>
         </form>
+        <hr>
         <form class="form" id="perfil__form">
             <div id="name">
                 <label class="form__label" for="nombre">Nombre de Usuario</label>
@@ -61,7 +89,8 @@
                 <input class="form__input" type="password" name="passwordNew" id="perfil__passwordNew" disabled>
 
                 <label class="form__label" for="password">Validar</label>
-                <input class="form__input" type="password" name="passwordValidate" id="perfil__passwordValidate" disabled>
+                <input class="form__input" type="password" name="passwordValidate" id="perfil__passwordValidate"
+                    disabled>
 
                 <button class="form__boton" id="pefil__btn--changePass" type="button">Cambiar contraseña</button>
             </div>
