@@ -50,6 +50,12 @@ usuarioSchema.pre('save', async function (next) {
     }
     next();
 });
+
+// Crear el modelo
+const coleccion = 'User'
+const User = mongoose.model(coleccion, usuarioSchema); //envia la data a la "coleccion" o tabla
+export default User;
+
 // usuarioSchema.pre('save', async function (next) {
 //     if (!this.UsuarioID) {
 //         const contador = await Contador.findByIdAndUpdate(
@@ -61,8 +67,4 @@ usuarioSchema.pre('save', async function (next) {
 //     }
 //     next();
 // });
-// Crear el modelo
-const coleccion = 'User'
-const User = mongoose.model(coleccion, usuarioSchema); //envia la data a la "coleccion" o tabla
-export default User;
 // module.exports = Usuario;

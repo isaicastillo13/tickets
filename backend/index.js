@@ -85,6 +85,23 @@ app.get('/users/:usuarioId', async (req, res) => {
     }
 });
 
+// Buscar o ver un usuario especifico, por Nombre
+// ----- " Login / Register " -----
+app.get('/users/name/:username', async (req, res) => {
+    const decodedUsername = decodeURIComponent(req.params.username);
+    console.log('Buscando usuario:', decodedUsername);
+    try {
+        const user = await User.findOne({ Nombre: decodedUsername });
+        if (!user) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+        res.json(user);
+    } catch (error) {
+        console.error('Error al buscar usuario:', error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+});
+
 //------------------------------------------------------------------------------
 
 // Rutas para Eventos
