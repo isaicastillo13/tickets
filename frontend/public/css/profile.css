@@ -8,15 +8,13 @@
 
 nav {
  margin-bottom: 25px;
- /* padding-bottom: 10px; */
+
  display: flex;
  font-size: 18px;
  font-weight: 600;
- /* border: 2px solid red; */
  box-shadow: 0px 6px 13px -12px rgb(174, 174, 174);
+ /* border: 2px solid red; */
 }
-
-/* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 
 ul {
  /* border: 1px solid; */
@@ -32,23 +30,33 @@ ul {
  /* border: 2px solid blue; */
 }
 li {
- width: 42%;
  display: flex;
  padding: 10px;
  align-items: center;
  /* border: 2px solid rgb(104, 198, 32); */
 }
-.user {
- justify-content: end;
+.li_img_hamburger {
+ padding-left: 6%;
 }
-.start-end {
- width: 8%;
- justify-content: center;
+.li_img_logo {
+ padding-right: 25%;
+}
+.li_user {
+ padding-left: 13.5%;
+}
+.li_img_exit {
+ padding-right: 6.5%;
+}
+a {
+ /* border: 2px solid rgb(255, 0, 255); */
+}
+span {
+ /* border: 2px solid rgb(32, 198, 198); */
 }
 
 img {
  width: 25px;
- height: 20px;
+ height: 21px;
 }
 
 /* ************************** HEAD_PROFILE ************************** */
