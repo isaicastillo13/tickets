@@ -5,29 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="../../../public/css/styles.css">
 </head>
 
 <body>
     <section class="registro">
         <form class="form" id="register__form">
-            <h1 id="form__titulo">Crear una cuenta</h1>
-            <p id="form__parrafo">Regístrate ahora para comprar y vender boletos</p>
+            <h1 id="form__titulo">Crear cuenta</h1>
+            <p id="form__parrafo">Regístrate para comprar y vender boletos</p>
             <div id="list__errores"></div>
             <div class="inputs">
 
-                <label class="form__label" for="registerName">Nombre</label>
-                <input class="form__input" id="registerName" type="text" required>
+                <!-- <label class="form__label" for="registerName">Nombre de Usuario</label>
+                <input class="form__input" id="registerName" type="text" required> -->
 
                 <label class="form__label" for="registerUsername">Nombre de Usuario</label>
-                <input class="form__input" id="registerUsername" type="email" required>
+                <input class="form__input" id="registerUsername" type="text" required>
+
+                <label class="form__label" for="registerEmail">Email</label>
+                <input class="form__input" id="registerEmail" type="email" required>
 
                 <label class="form__label" for="registerPass">Contraseña</label>
                 <input class="form__input" id="registerPass" type="password" required>
 
                 <label class="form__label" for="registerPassValidate">Validar Contraseña</label>
                 <input class="form__input" id="registerPassValidate" type="password" required>
-                
+
                 <button class=" form__input form__boton" id="registerBotonRegistro">Registrarse</button>
             </div>
 
