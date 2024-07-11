@@ -48,6 +48,8 @@ a {
 .tab-container {
  position: relative;
  padding-top: var(--tabs-height); /* en esta zona colocaremos las pestañas */
+ width: 94%;
+ /* border: 2px solid rgb(246, 255, 0); */
 }
 #tab1 > a {
  --tabs-position: 0;
@@ -89,6 +91,9 @@ a {
 .tabs {
  padding: 10px;
  color: var(--tabs-text-color);
+ display: flex;
+ justify-content: center;
+ /* border: 2px solid rebeccapurple; */
 }
 
 .tab-content {
@@ -96,7 +101,7 @@ a {
  color: var(--tabs-text-color2);
  padding: 20px;
  border: var(--tabs-border-size) solid var(--tabs-border-color2);
- border-radius: 0 0 10px 10px;
+ border-radius: 0 10px 10px 10px;
  position: relative;
  z-index: 100;
 }

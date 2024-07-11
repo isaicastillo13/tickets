@@ -6,25 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil</title>
     <link rel="stylesheet" href="styles/formliarios.css">
+    <!-- <link rel="stylesheet" href="../../../public/css/navbar.css"> -->
     <link rel="stylesheet" href="../../../public/css/profile-tabs.css">
     <link rel="stylesheet" href="../../../public/css/profile.css">
 </head>
 
 <body>
 
+    <!-- ******************** " NAVBAR " ******************** -->
     <nav>
-        <!-- <li><img src="../../../public/icons/hamburguesa.png" alt="icono de menu"></li>
-        <li>
-            <p>Logo</p>
-        </li>
-
-        <li>
-            <p>UserName</p>
-        </li>
-        <li>
-            <img src="../../../public/icons/logout.png" alt="">
-        </li> -->
-        <!-- **************************************************************************** -->
         <ul>
             <li class="li_img_hamburger">
                 <a href="https://www.google.com/">
@@ -32,23 +22,20 @@
                 </a>
             </li>
             <li class="li_img_logo">
+                <a class="a_logo" href="../../../public/index.html">Logo</a>
                 <!-- <span>
                 </span> -->
-                <span>
-                    Logo
-                </span>
             </li>
             <li class="li_user">
-                <span>
-                    UserName
-                </span>
+                UserName
+                <!-- <span>
+                </span> -->
             </li>
             <li class="li_img_exit">
                 <a href="https://www.google.com/">
                     <img src="../../../public/icons/logout.png" alt="icono logout">
                 </a>
             </li>
-            <!-- <li></li> -->
         </ul>
     </nav>
 
@@ -65,7 +52,7 @@
                 <div id="tab4" class="tab">
                     <a href="#tab4">Editar Perfil</a>
                     <div class="tab-content">
-                        <!-- ******************** FORM EDITAR PERFL ******************** -->
+                        <!-- ******************** " FORM EDITAR PERFL " ******************** -->
                         <form class="form" id="perfil__form">
                             <!-- <div id="name" class="div_form_name">
                                                 <label class="form_lbl_editp" for="nombre">Nombre de Usuario</label>
@@ -103,7 +90,7 @@
                 <div id="tab3" class="tab">
                     <a href="#tab3">Crear Evento</a>
                     <div class="tab-content">
-                        <!-- ******************** FORM AGREGAR EVENTO ******************** -->
+                        <!-- ******************** " FORM AGREGAR EVENTO " ******************** -->
                         <form class="form__addEvent" id="perfil__form__addVEvent">
                             <!-- <div id="name">
                                 <label class="form__label" for="nombre">Nombre de Usuario</label>
@@ -141,8 +128,33 @@
                 <div id="tab1" class="tab">
                     <a href="#tab1">Mis Boletos</a>
                     <div class="tab-content">
-                        <h2>Titulo 1</h2>
-                        <p>Lorem ipsum ...</p>
+                        <!-- <h2>Titulo 1</h2>
+                        <p>Lorem ipsum ...</p> -->
+                        <form class="form__addEvent" id="perfil__form__addVEvent">
+                            <!-- <div id="name">
+                                                        <label class="form__label" for="nombre">Nombre de Usuario</label>
+                                                        <input class="form__input" type="text" name="nombre" id="perfil__name" value="" disabled>
+                                                        <button class="form__boton" id="pefil__btn--edit" type="button">Editar</button>
+                                                    </div> -->
+                            <div id="nuevo_evento" class="div_new_event">
+                                <h2 class="title_form_event">TEST MIS EVENTOS</h2>
+                                <label class="form_lbl_event" for="evento-t">Evento (título)</label>
+                                <input class="form__input" type="text" name="evento" id="eventoid">
+
+                                <label class="form_lbl_event" for="fechaevento">Fecha</label>
+                                <input class="form_input" type="date" name="fecha__e" id="fecha__eid">
+
+                                <label class="form_lbl_event" for="ubicacion">Ubicacion del evento</label>
+                                <input class="form__input" type="text" name="ubicacion" id="ubicacionid">
+
+                                <label class="form_lbl_event" for="txt">Descripción</label>
+                                <textarea name="text_des" id="text_des_id" rows="5"></textarea>
+
+                                <!-- <input class="form__input" type="text" name="text__d" id="text__did"> -->
+                                <button class="form_btn_publicar" id="pefil__btn_publicar"
+                                    type="button">Publicar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
