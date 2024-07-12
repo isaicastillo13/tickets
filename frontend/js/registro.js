@@ -39,6 +39,7 @@
                     const data = await rowResponse.json();
                     resultadoUsuario = data.resultadoUsuario;
 
+
                     if (data.length > 0) {
                         console.log('El usuario ya existe')
                     } else {

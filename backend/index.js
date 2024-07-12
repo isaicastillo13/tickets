@@ -8,7 +8,8 @@ import Evento from './models/eventos.js';
 import Entrada from './models/entradas.js';
 import Reventa from './models/reventas.js';
 import cors from 'cors';
-import { genSaltSync, hashSync } from 'bcryptjs';
+import { genSaltSync, hashSync} from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 
 config();
 
@@ -73,6 +74,8 @@ app.post('/', (req, res) => {
     res.json({ data: hashedPassword });
 });
 
+
+
 // Crear o agregar nuevo usuario
 // ----- " Register " -----
 app.post('/register', async (req, res) => {
@@ -97,6 +100,24 @@ app.post('/register', async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
+
+// Ruta de login
+app.post('/login', async (req, res) => {
+    try {
+      const { username, password } = req.body;
+      console.log('Datos recibidos:', req.body);
+      const user = await User.find({"CorreoElectronico":username});
+      console.log('Usuario encontrado:', user);
+      console.log(`${password} = ${user.Contraseña}`);
+      if (user && bcrypt.compareSync(password, user.Contraseña)) {
+        res.status(200).send('Login exitoso');
+      } else {
+        res.status(400).send('Credenciales inválidas');
+      }
+    } catch (error) {
+      res.status(500).send('Error en el login');
+    }
+  });
 
 // Buscar o ver un usuario especifico, por UsuarioID
 // ----- " perfil " -----
