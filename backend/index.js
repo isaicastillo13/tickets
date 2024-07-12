@@ -104,20 +104,31 @@ app.post('/register', async (req, res) => {
 // Ruta de login
 app.post('/login', async (req, res) => {
     try {
-      const { username, password } = req.body;
-      console.log('Datos recibidos:', req.body);
-      const user = await User.find({"CorreoElectronico":username});
-      console.log('Usuario encontrado:', user);
-      console.log(`${password} = ${user.Contraseña}`);
-      if (user && bcrypt.compareSync(password, user.Contraseña)) {
-        res.status(200).send('Login exitoso');
-      } else {
-        res.status(400).send('Credenciales inválidas');
-      }
+        const { username, password } = req.body;
+        console.log('Datos recibidos:', req.body);
+        const users = await User.find({ "CorreoElectronico": username });
+        
+        if (users.length === 0) {
+            return res.status(400).send('Credenciales inválidas'); // Usuario no encontrado
+        }
+
+        const user = users[0]; // Accede al primer usuario encontrado
+        console.log('Usuario encontrado:', user);
+
+        console.log(`${password} = ${user.Contraseña}`);
+
+        // Compara la contraseña
+        if (bcrypt.compareSync(password, user.Contraseña)) {
+            res.status(200).json({ message: 'Login exitoso' });
+        } else {
+            res.status(200).json({ message: ('Credenciales inválidas')});
+        }
     } catch (error) {
-      res.status(500).send('Error en el login');
+        console.error('Error en el login:', error);
+        res.status(200).json({ message: ('Error en el login')});
     }
-  });
+});
+
 
 // Buscar o ver un usuario especifico, por UsuarioID
 // ----- " perfil " -----
