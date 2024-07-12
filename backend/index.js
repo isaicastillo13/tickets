@@ -1,5 +1,4 @@
 console.log("Hello via Bun! desde tickets");
-// console.log("Hello via Bun!");
 import express from 'express';
 import mongoose from 'mongoose';
 import { config } from 'dotenv';
@@ -8,12 +7,16 @@ import DriverId from './models/driver-id.js';
 import Evento from './models/eventos.js';
 import Entrada from './models/entradas.js';
 import Reventa from './models/reventas.js';
+import cors from 'cors';
+import { genSaltSync, hashSync } from 'bcryptjs';
 
 config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT ?? 3000;
 
+app.use(express.json())
+app.use(cors());
 // Crear un modelo
 // const User = require('./models/user');
 // const DriverId = require('./models/driver-id');
@@ -42,26 +45,12 @@ app.use(express.json());
 
 // Rutas para Usuarios
 
-// Crear o agregar nuevo usuario
-// ----- " Register " -----
-app.post('/users', async (req, res) => {
-    try {
-        console.log('Datos recibidos:');
-        const newUser = new User(req.body);
-        // console.log('Nuevo usuario antes de guardar:', newUser);
-        const savedUser = await newUser.save();
-        console.log('Usuario guardado:', savedUser);
-        res.status(201).json(savedUser);
-    } catch (error) {
-        console.error('Error al guardar usuario:', error);
-        res.status(400).json({ message: error.message });
-    }
-});
 
-// buscar o ver todos los usuarios
-app.get('/users', async (req, res) => {
+// buscar un usuarios para validar su existencia
+app.get('/email', async (req, res) => {
+    const email = req.query.emailUser;
     try {
-        const users = await User.find();
+        const users = await User.find({"CorreoElectronico":email});
         res.json(users);
         console.log('Mostrando Usuario');
     } catch (error) {
@@ -69,7 +58,45 @@ app.get('/users', async (req, res) => {
     }
 });
 
-//           ------------
+// Hashear password
+const hashPassword = (password) => {
+    const salt = genSaltSync(10);
+    const hash = hashSync(password, salt);
+    return hash;
+};
+
+
+app.post('/', (req, res) => {
+    console.log('hasheando en el server');
+    const { password = '' } = req.body;
+    const hashedPassword = hashPassword(password);
+    res.json({ data: hashedPassword });
+});
+
+// Crear o agregar nuevo usuario
+// ----- " Register " -----
+app.post('/register', async (req, res) => {
+    try {
+        console.log('Datos recibidos:');
+        const {userId,nombre, email, password } = req.body;
+        console.log('Datos recibidos:', req.body);
+
+        const newUser = new User({ 
+            UsuarioID: userId,
+            Nombre: nombre, 
+            CorreoElectronico: email, 
+            Contraseña: password});
+
+        const savedUser = await newUser.save();
+
+        console.log('Usuario guardado:', savedUser);
+
+        res.status(201).json(savedUser);
+    } catch (error) {
+        console.error('Error al guardar usuario:', error);
+        res.status(400).json({ message: error.message });
+    }
+});
 
 // Buscar o ver un usuario especifico, por UsuarioID
 // ----- " perfil " -----
