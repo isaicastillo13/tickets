@@ -255,10 +255,14 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
             // return res.status(404).json({ message: "No se encontraron ENTRADAS de este usuario" });
         }
 
-        // Luego, busca todos los eventos de este usuario
-        const eventoIds = parseInt(entradas.map(entrada => entrada.EventoID));
+        // Extrae los IDs de los eventos de las entradas
+        const eventoIds = entradas.map(entrada => entrada.EventoID);//corregido
+
+        // const eventoIds = parseInt(entradas.map(entrada => entrada.EventoID));
         // console.log(eventoIds)
-        const eventos = await Evento.find({ EventoID: eventoIds });
+        const eventos = await Evento.find({ EventoID: { $in: eventoIds } });//corregido
+
+        // const eventos = await Evento.find({ EventoID: eventoIds });
 
         if (eventos.length === 0) {
             // return res.status(404).json({ message: eventoIds });
@@ -288,11 +292,12 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
                 Titulo: evento.Titulo,
                 Descripcion: evento.Descripcion,
                 FechaEvento: evento.FechaEvento,
-                Ubicacion: evento.Ubicacion
+                Ubicacion: evento.Ubicacion,
+                Precio: evento.Precio
             }))
         };
 
-        console.log('Mostrando Entrada');
+        console.log('Mostrando Entrada', respuesta);
         return res.json(respuesta);
         // res.json(respuesta);
     } catch (error) {
@@ -359,7 +364,8 @@ app.get('/eventos/usuario/:idUsuario', async (req, res) => {
                 Titulo: evento.Titulo,
                 Descripcion: evento.Descripcion,
                 FechaEvento: evento.FechaEvento,
-                Ubicacion: evento.Ubicacion
+                Ubicacion: evento.Ubicacion,
+                Precio: evento.Precio
             }))
         };
 

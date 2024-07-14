@@ -1,42 +1,43 @@
 .banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-    background-color: $rojo500;
-    border-radius: 16px;
-    padding: 10px;
-    color: $blanco;
-    box-shadow: 0px 6px 4px rgba(24, 24, 27, .25) inset;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin-top: 80px;
+ background-color: $rojo500;
+ border-radius: 16px;
+ padding: 10px;
+ color: $blanco;
+ box-shadow: 0px 6px 4px rgba(24, 24, 27, 0.25) inset;
 
-    h2 {
-        margin: 0;
-        font-weight: 600;
-    }
+ h2 {
+  margin: 0;
+  font-weight: 600;
+ }
 
-    p {
-        color: $blanco;
-        font-weight: 200;
-        text-align: center;
-    }
+ p {
+  color: $blanco;
+  font-weight: 200;
+  text-align: center;
+ }
 }
 
 .event__title {
-    font-weight: 600;
-    color: $gris400;
-    margin: 24px;
-    text-align: start;
+ font-weight: 600;
+ color: $gris400;
+ margin: 24px;
+ text-align: start;
 }
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 64px;
+main {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 64px;
+ flex-direction: column;
 }
 .events {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+ display: grid;
+ justify-content: center;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 8px;
 }

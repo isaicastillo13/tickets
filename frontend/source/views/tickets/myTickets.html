@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../../../public/css/styles.css">
+    <!-- <style>
+        .container_card_ {
+            display: flex;
+            flex-direction: row;
+            border: 2px solid red;
+            width: 200%;
+            height: 100%;
+        }
+    </style> -->
 </head>
 
 <body>
@@ -21,7 +30,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../user/profile.html">UserName</a>
+                    <a id="link_UserName" href="../user/profile.html">UserName</a>
                 </li>
                 <li>
                     <img src="../../../public/icons/logoutBlanco.png" alt="icono del logout">
@@ -49,31 +58,37 @@
             </section>
         </section>
     </header>
-    <main>
-        <section class="event contenedor">
+    <main id="boletosContent">
+
+        <!-- <section class="event contenedor">
             <img class="event__img" src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg"
                 alt="imagen del evento">
             <div class="event__data">
-                <h2 class="data__title">Titulo del evento</h2>
-                <p class="data__description">Descripcion</p>
+                <h2 class="data__title" id="titulo_txt">Titulo del evento</h2>
+                <p class="data__description" id="descripcion_txt">Descripcion</p>
                 <div class="card__location">
-                    <p>Ubicacion</p>
+                    <p id="ubicacion_txt">Ubicacion</p>
                     <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
                 </div>
                 <div class="card__date">
-                    <p>Fecha</p>
+                    <p id="fecha_txt">Fecha</p>
                     <img src="../../../public/icons/fecha__icono.png" alt="icono de calendario">
                 </div>
                 <p class="data__type">VIP</p>
-                <p class="price">$ Precio</p>
+                <p class="price" id="precio_txt">$ Precio</p>
                 <input class="btn btn-principal btn__resale" id="" type="button" value="Revender">
             </div>
-        </section>
+        </section> -->
+
+        <!-- <section id="boletosContent" class="event contenedor">
+            
+        </section> -->
+
     </main>
     <footer>
         <div class="footer__menu">
             <li><a href="#header">Inicio</a></li>
-            <li><a href="#reventa">Reventa</a></li>
+            <li><a href="resale.html">Reventa</a></li>
             <li><a href="#eventos">Eventos</a></li>
         </div>
         <div class="footer__logo">
@@ -87,6 +102,7 @@
         <hr>
         <p>© 2021 TicketMaster</p>
     </footer>
+    <script src="../../../js/myTickets.js"></script>
 </body>
 
 </html>
