@@ -68,7 +68,8 @@
                             <img src="icons/ubicacion_icono.png" alt="icono de ubicacion">
                         </div>
                         <p class="card__precio">$ ${evento.Precio}</p>
-                        <a href="../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
+                        <a href="../source/views/events/event.html?eventoId=${evento.EventoID}" class="btn btn-principal card__btn">Ver Evento</a>
+
                     `;
 
                     App.htmlElements.eventsMain.appendChild(eventCard);
