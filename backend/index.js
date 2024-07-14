@@ -8,7 +8,7 @@ import Evento from './models/eventos.js';
 import Entrada from './models/entradas.js';
 import Reventa from './models/reventas.js';
 import cors from 'cors';
-import { genSaltSync, hashSync} from 'bcryptjs';
+import { genSaltSync, hashSync } from 'bcryptjs';
 import bcrypt from 'bcryptjs';
 
 config();
@@ -51,7 +51,7 @@ app.use(express.json());
 app.get('/email', async (req, res) => {
     const email = req.query.emailUser;
     try {
-        const users = await User.find({"CorreoElectronico":email});
+        const users = await User.find({ "CorreoElectronico": email });
         res.json(users);
         console.log('Mostrando Usuario');
     } catch (error) {
@@ -81,14 +81,15 @@ app.post('/', (req, res) => {
 app.post('/register', async (req, res) => {
     try {
         console.log('Datos recibidos:');
-        const {userId,nombre, email, password } = req.body;
+        const { userId, nombre, email, password } = req.body;
         console.log('Datos recibidos:', req.body);
 
-        const newUser = new User({ 
+        const newUser = new User({
             UsuarioID: userId,
-            Nombre: nombre, 
-            CorreoElectronico: email, 
-            Contraseña: password});
+            Nombre: nombre,
+            CorreoElectronico: email,
+            Contraseña: password
+        });
 
         const savedUser = await newUser.save();
 
@@ -107,7 +108,7 @@ app.post('/login', async (req, res) => {
         const { username, password } = req.body;
         console.log('Datos recibidos:', req.body);
         const users = await User.find({ "CorreoElectronico": username });
-        
+
         if (users.length === 0) {
             return res.status(400).send('Credenciales inválidas'); // Usuario no encontrado
         }
@@ -119,13 +120,17 @@ app.post('/login', async (req, res) => {
 
         // Compara la contraseña
         if (bcrypt.compareSync(password, user.Contraseña)) {
-            res.status(200).json({ message: 'Login exitoso' });
+            res.status(200).json({
+                message: '¡¡ Login exitoso !!',
+                id: user.UsuarioID, // Assuming _id is the user ID
+                Nombre: user.Nombre // Assuming Nombre is the user's name
+            });
         } else {
-            res.status(200).json({ message: ('Credenciales inválidas')});
+            res.status(200).json({ message: ('Credenciales inválidas') });
         }
     } catch (error) {
         console.error('Error en el login:', error);
-        res.status(200).json({ message: ('Error en el login')});
+        res.status(200).json({ message: ('Error en el login') });
     }
 });
 
@@ -232,7 +237,7 @@ app.get('/entradas', async (req, res) => {
 // ----- " Mis Boletos " -----
 app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
     try {
-        // Primero, encuentra el usuario por su nombre
+        // Primero, encuentra el usuario por UsuarioID
         const usuario = await User.findOne({ UsuarioID: req.params.idUsuario });
         if (!usuario) {
             return res.status(404).json({ message: "Usuario no encontrado" });
@@ -241,7 +246,10 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
         // busca todos las entradas de este usuario
         const entradas = await Entrada.find({ UsuarioID: usuario.UsuarioID });
         if (entradas.length === 0) {
-            return res.status(404).json({ message: "No se encontraron ENTRADAS de este usuario" });
+            res.status(200).json({
+                message: " No tienes boletos, anímate y échale un vistazo a la cartelera de eventos disponibles, quizás haya algo para ti. "
+            });
+            // return res.status(404).json({ message: "No se encontraron ENTRADAS de este usuario" });
         }
 
         // Luego, busca todos los eventos de este usuario
@@ -251,7 +259,7 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
 
         if (eventos.length === 0) {
             // return res.status(404).json({ message: eventoIds });
-            return res.status(404).json({ message: "No se encontraron eventos para este ENTRADA" });
+            return res.status(200).json({ message: "No se encontraron eventos para este ENTRADA" });
         }
 
         // Prepara la respuesta con los datos del usuario y sus eventos
