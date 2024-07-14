@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil</title>
-    <link rel="stylesheet" href="styles/formliarios.css">
+    <!-- <link rel="stylesheet" href="styles/formliarios.css"> -->
     <!-- <link rel="stylesheet" href="../../../public/css/navbar.css"> -->
     <link rel="stylesheet" href="../../../public/css/profile-tabs.css">
     <link rel="stylesheet" href="../../../public/css/profile.css">
@@ -26,10 +26,8 @@
                 <!-- <span>
                 </span> -->
             </li>
-            <li class="li_user">
+            <li class="li_user" id="li_UserName">
                 UserName
-                <!-- <span>
-                </span> -->
             </li>
             <li class="li_img_exit">
                 <a href="https://www.google.com/">
@@ -50,22 +48,17 @@
         <div class="tabs">
             <div class="tab-container">
                 <div id="tab4" class="tab">
-                    <a href="#tab4">Editar Perfil</a>
+                    <a id="link_edit" href="#tab4">Editar Perfil</a>
                     <div class="tab-content">
                         <!-- ******************** " FORM EDITAR PERFL " ******************** -->
                         <form class="form" id="perfil__form">
-                            <!-- <div id="name" class="div_form_name">
-                                                <label class="form_lbl_editp" for="nombre">Nombre de Usuario</label>
-                                                <input class="form__input" type="text" name="nombre" id="perfil__name" value="" disabled>
-                                                <button class="form__boton" id="pefil__btn--edit" type="button">Editar</button>
-                                            </div> -->
                             <div id="password" class="div_form_edit">
 
                                 <h2 class="title_form_event">Editar Perfil</h2>
 
                                 <label class="form_lbl_editp" for="nombre">Nombre de Usuario</label>
                                 <div id="name" class="div_form_name">
-                                    <input class="form_input_edit" type="text" name="nombre" id="perfil__name" value="">
+                                    <input class="form_input_edit" type="text" name="nombre" id="perfil__name">
                                     <!-- <button class="form_boton_edit" id="pefil__btn--edit" type="button">Editar</button> -->
                                 </div>
 
@@ -128,33 +121,7 @@
                 <div id="tab1" class="tab">
                     <a href="#tab1">Mis Boletos</a>
                     <div class="tab-content">
-                        <!-- <h2>Titulo 1</h2>
-                        <p>Lorem ipsum ...</p> -->
-                        <form class="form__addEvent" id="perfil__form__addVEvent">
-                            <!-- <div id="name">
-                                                        <label class="form__label" for="nombre">Nombre de Usuario</label>
-                                                        <input class="form__input" type="text" name="nombre" id="perfil__name" value="" disabled>
-                                                        <button class="form__boton" id="pefil__btn--edit" type="button">Editar</button>
-                                                    </div> -->
-                            <div id="nuevo_evento" class="div_new_event">
-                                <h2 class="title_form_event">TEST MIS EVENTOS</h2>
-                                <label class="form_lbl_event" for="evento-t">Evento (título)</label>
-                                <input class="form__input" type="text" name="evento" id="eventoid">
-
-                                <label class="form_lbl_event" for="fechaevento">Fecha</label>
-                                <input class="form_input" type="date" name="fecha__e" id="fecha__eid">
-
-                                <label class="form_lbl_event" for="ubicacion">Ubicacion del evento</label>
-                                <input class="form__input" type="text" name="ubicacion" id="ubicacionid">
-
-                                <label class="form_lbl_event" for="txt">Descripción</label>
-                                <textarea name="text_des" id="text_des_id" rows="5"></textarea>
-
-                                <!-- <input class="form__input" type="text" name="text__d" id="text__did"> -->
-                                <button class="form_btn_publicar" id="pefil__btn_publicar"
-                                    type="button">Publicar</button>
-                            </div>
-                        </form>
+                        <p id="error_boletos"></p>
                     </div>
                 </div>
             </div>
@@ -163,8 +130,7 @@
         <hr>
 
     </section>
-    <script src="app.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="../../styles/profile.css">
+    <script src="../../../js/profile.js"></script>
 </body>
 
 </html>
