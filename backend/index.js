@@ -176,8 +176,11 @@ app.post('/eventos', async (req, res) => {
     try {
         const nuevoEvento = new Evento(req.body);
         await nuevoEvento.save();
-        res.status(201).json(nuevoEvento);
-        console.log('Evento guardado:');
+        res.status(201).json({
+            evento: nuevoEvento,
+            message: 'Evento CREADO correctamente'
+        });
+        console.log('Evento guardado:', nuevoEvento);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -289,8 +292,9 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
             }))
         };
 
-        res.json(respuesta);
         console.log('Mostrando Entrada');
+        return res.json(respuesta);
+        // res.json(respuesta);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

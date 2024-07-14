@@ -9,20 +9,21 @@
     <!-- <link rel="stylesheet" href="../../../public/css/navbar.css"> -->
     <link rel="stylesheet" href="../../../public/css/profile-tabs.css">
     <link rel="stylesheet" href="../../../public/css/profile.css">
+    <link rel="stylesheet" href="../../../public/css/profile-misboletos.css">
 </head>
 
 <body>
 
     <!-- ******************** " NAVBAR " ******************** -->
-    <nav>
-        <ul>
+    <nav class="nav_profile">
+        <ul class="ul_profile">
             <li class="li_img_hamburger">
                 <a href="https://www.google.com/">
-                    <img src="../../../public/icons/hamburguesa.png" alt="icono de menu">
+                    <img class="img_profile" src="../../../public/icons/hamburguesa.png" alt="icono de menu">
                 </a>
             </li>
             <li class="li_img_logo">
-                <a class="a_logo" href="../../../public/index.html">Logo</a>
+                <a class="a_profile" href="../../../public/index.html">Logo</a>
                 <!-- <span>
                 </span> -->
             </li>
@@ -30,8 +31,8 @@
                 UserName
             </li>
             <li class="li_img_exit">
-                <a href="https://www.google.com/">
-                    <img src="../../../public/icons/logout.png" alt="icono logout">
+                <a class="a_profile" href="https://www.google.com/">
+                    <img class="img_profile" src="../../../public/icons/logout.png" alt="icono logout">
                 </a>
             </li>
         </ul>
@@ -47,8 +48,9 @@
 
         <div class="tabs">
             <div class="tab-container">
-                <div id="tab4" class="tab">
-                    <a id="link_edit" href="#tab4">Editar Perfil</a>
+                <div id="tab5" class="tab">
+                    <!-- ******************** " EDITAR PERFIL " ******************** -->
+                    <a id="link_edit" href="#tab5">Editar Perfil</a>
                     <div class="tab-content">
                         <!-- ******************** " FORM EDITAR PERFL " ******************** -->
                         <form class="form" id="perfil__form">
@@ -80,11 +82,12 @@
                         </form>
                     </div>
                 </div>
-                <div id="tab3" class="tab">
-                    <a href="#tab3">Crear Evento</a>
+
+                <div id="tab4" class="tab">
+                    <a href="#tab4">Crear Evento</a>
                     <div class="tab-content">
                         <!-- ******************** " FORM AGREGAR EVENTO " ******************** -->
-                        <form class="form__addEvent" id="perfil__form__addVEvent">
+                        <form class="form__addEvent" id="form_add_Event">
                             <!-- <div id="name">
                                 <label class="form__label" for="nombre">Nombre de Usuario</label>
                                 <input class="form__input" type="text" name="nombre" id="perfil__name" value="" disabled>
@@ -93,43 +96,90 @@
                             <div id="nuevo_evento" class="div_new_event">
                                 <h2 class="title_form_event">Crear Evento</h2>
                                 <label class="form_lbl_event" for="evento-t">Evento (título)</label>
-                                <input class="form__input" type="text" name="evento" id="eventoid">
+                                <input class="form__input" type="text" name="evento" id="input_evento" required>
 
                                 <label class="form_lbl_event" for="fechaevento">Fecha</label>
-                                <input class="form_input" type="date" name="fecha__e" id="fecha__eid">
+                                <input class="form_input" type="date" name="fecha__e" id="input_fecha" required>
 
                                 <label class="form_lbl_event" for="ubicacion">Ubicacion del evento</label>
-                                <input class="form__input" type="text" name="ubicacion" id="ubicacionid">
+                                <input class="form__input" type="text" name="ubicacion" id="input_ubicacion" required>
+
+                                <label class="form_lbl_event" for="precio">Precio de boleto $</label>
+                                <input class="form__input" type="number" name="precio" id="input_precio" required>
 
                                 <label class="form_lbl_event" for="txt">Descripción</label>
-                                <textarea name="text_des" id="text_des_id" rows="5"></textarea>
+                                <textarea name="text_des" id="input_descripcion" rows="5" maxlength="400"
+                                    required></textarea>
 
                                 <!-- <input class="form__input" type="text" name="text__d" id="text__did"> -->
-                                <button class="form_btn_publicar" id="pefil__btn_publicar"
-                                    type="button">Publicar</button>
+                                <button class="form_btn_publicar" id="btn_publicar" type="submit">Publicar</button>
                             </div>
                         </form>
                     </div>
                 </div>
+                <div id="tab3" class="tab">
+                    <!-- ******************** " VER MIS EVENTOS " ******************** -->
+                    <a href="#tab3">Mis Eventos</a>
+                    <div class="tab-content">
+                        <h2>Titulo 4</h2>
+                        <p>Lorem ipsum ...</p>
+                    </div>
+                </div>
+                <!-- ******************** " VER MIS REVENTAS " ******************** -->
                 <div id="tab2" class="tab">
-                    <a href="#tab2">Mis Eventos</a>
+                    <a href="#tab2">Mis Reventas</a>
                     <div class="tab-content">
                         <h2>Titulo 2</h2>
                         <p>Lorem ipsum ...</p>
                     </div>
                 </div>
                 <div id="tab1" class="tab">
-                    <a href="#tab1">Mis Boletos</a>
+                    <!-- ******************** " VER MIS BOLETOS " ******************** -->
+                    <a id="loadBoletosLink" href="#tab1">Mis Boletos</a>
                     <div class="tab-content">
+                        <!-- ETIQUETA PARA CUANDO EL USUARIO NO TIENE BOLETOS -->
                         <p id="error_boletos"></p>
+                        <button id="btn_verBoletos" type="button">Ir a mis boletos</button>
+                        <!-- <div class="event_data">
+                            <div class="event_img_div">
+                                <img class="event_img" src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg"
+                                    alt="imagen del evento">
+                            </div>
+                            <div class="event_txt">
+                                <h2 class="data__title">Titulo del evento</h2>
+                                <p class="data__description">Descripcion</p>
+                                <div class="card__location">
+                                    <p>Ubicacion</p>
+                                    <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
+                                </div>
+                                <div class="card__date">
+                                    <p>Fecha</p>
+                                    <img src="../../../public/icons/fecha__icono.png" alt="icono de calendario">
+                                </div>
+                                <p class="data__type">VIP</p>
+                                <p class="price">$ Precio</p>
+                                <div class="div_btn">
+                                    <input class="btn btn-principal btn__resale" id="" type="button" value="Revender">
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- 
+                        <div id="boletosContent">
+                            <main>
+                                <section class="event contenedor">
+                                </section>
+                            </main>
+                        </div> -->
+
                     </div>
                 </div>
             </div>
         </div>
 
         <hr>
-
     </section>
+
+
     <script src="../../../js/profile.js"></script>
 </body>
 

@@ -24,6 +24,10 @@ const eventoSchema = new mongoose.Schema({
         required: true,
         maxlength: 255
     },
+    Precio: {
+        type: Number,
+        required: true
+    },
     UsuarioID: {
         type: Number,
         ref: 'User',
