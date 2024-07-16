@@ -2,8 +2,10 @@
 (() => {
     const App = {
         htmlElements: {
-            userNamelink: document.querySelector('#link_UserName'),
-            eventsMain: document.getElementById('events__main'),
+            userName: document.querySelector('.navbar--derecha .userName'),
+            eventsMain: document.querySelector('#events__main'),
+            iconLogout: document.querySelector('#logout'),
+            pagina:document
         },
         init() {
 
@@ -12,28 +14,39 @@
             App.methods.fetchEvents();
         },
         bindEvents() {
-
-            // Escuchar el clic en el enlace "UserName"
-            const userNameLink = document.getElementById('link_UserName');
-            // userNameLink.addEventListener('click', App.handlers.handleUserNameClick);
-            // App.htmlElements.formularioDeLogin.addEventListener('submit', App.handlers.catchDatos)
+            App.htmlElements.iconLogout.addEventListener('click', App.handlers.closeSession);
+            App.htmlElements.pagina.addEventListener('DOMContentLoaded', App.handlers.pageReady);
         },
         handlers: {
 
-            handleUserNameClick(e) {
+            pageReady(e) {
                 e.preventDefault(); // Prevenir la acción predeterminada
                 App.methods.userData(); // Llamar al método para cargar datos del usuario
             },
+            closeSession(){
+                App.methods.closeSession();
+            }
 
         },
         methods: {
-            async userData() {
-
-                const userName = localStorage.getItem('userName');
-                // console.log("Nombre de usuario recuperado: " + userName);
-                if (userName) {
-                    App.htmlElements.userNamelink.textContent = userName;
+            userData() {
+                const userName = localStorage.getItem('userName');  
+                console.log(localStorage.getItem('userName'))
+                if (userName != null) {
+                    App.htmlElements.userName.style.display = 'block';
+                    App.htmlElements.iconLogout.style.display = 'block';
+                    App.htmlElements.userName.textContent = userName;
+                    App.htmlElements.userName.innerHTML = `<a id="link_UserName" href="/frontend/source/views/usuario/perfil.html">${userName}</a>`;
+                }else{
+                    console.log('no hay usuario')
+                    App.htmlElements.userName.style.display = 'block';
+                    App.htmlElements.userName.innerHTML = `<a id="link_UserName" href="/frontend/source/views/auth/login.html">Iniciar Sesion</a>`;
+                    App.htmlElements.iconLogout.style.display = 'none';
                 }
+            },
+            closeSession(){
+                localStorage.removeItem('userName');
+                window.location.href = 'http://localhost:3000/index.html';
             },
 
             async fetchEvents() {
@@ -68,13 +81,16 @@
                             <img src="icons/ubicacion_icono.png" alt="icono de ubicacion">
                         </div>
                         <p class="card__precio">$ ${evento.Precio}</p>
-                        <a href="../source/views/events/event.html?eventoId=${evento.EventoID}" class="btn btn-principal card__btn">Ver Evento</a>
+                        <a href="../source/views/eventos/eventos.html?eventoId=${evento.EventoID}" class="btn btn-principal card__btn">Ver Evento</a>
 
                     `;
 
                     App.htmlElements.eventsMain.appendChild(eventCard);
                 });
             },
+            renderNavbar(){
+
+            }
 
         }
     };

@@ -20,6 +20,12 @@
                 email = emailArray[0]
                 password = App.htmlElements.password.value
                 App.methods.validarLogin(email, password)
+            },
+            estaLoagueado() {
+                if (localStorage.getItem('userId') != null) {
+                    document.querySelector('#logout').style.display = 'block'
+                    document.querySelector('#link_UserName').style.display = 'block'
+                }
             }
         },
         methods: {
@@ -59,6 +65,9 @@
                     console.error('Error:', error);
                 }
             },
+            mostrarLogout() {
+
+            }
         }
     };
     App.init();

@@ -12,19 +12,18 @@
     <header class="header" id="header">
         <section class="header__navBar">
             <nav>
-                <li><img src="icons/hamburguesaBlanco.png" alt="icono de menu"></li>
-                <li><a href="index.html">Logo</a></li>
                 <li>
-                    <div class="searchBar">
-                        <input type="search" placeholder="Buscar">
-                    </div>
+                    <a href="index.html">Logo</a>
                 </li>
-                <li>
-                    <a id="link_UserName" href="../source/views/user/profile.html">UserName</a>
-                </li>
-                <li>
-                    <img src="icons/logoutBlanco.png" alt="icono del logout" id="logout">
-                </li>
+                <div class="navbar--derecha">
+                    <li class="userName">
+                    </li>
+                    <li>
+                        <a href="/frontend/source/views/auth/login.html">
+                            <img src="iconos/logoutBlanco.png" alt="icono del logout" id="logout">
+                        </a>
+                    </li>
+                </div>
             </nav>
         </section>
 
@@ -57,27 +56,11 @@
             tus eventos favoritos. Explora nuestra sección de resale para encontrar entradas de última hora a precios
             competitivos. Aprovecha esta oportunidad para asegurar tu lugar y no te pierdas ninguna experiencia
             increíble.</p>
-        <a href="../source/views/tickets/resale.html" class="btn btn-secundario">Ir a la Reventa</a>
+        <a href="../source/views/boletos/boletosReventa.html" class="btn btn-secundario">Ir a la Reventa</a>
     </section>
 
     <h3 class="event__title contenedor">Proximos Eventos</h3>
     <main class="events contenedor" id="events__main">
-        <div class="card">
-            <img src="images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento" class="card__image"></img>
-            <div class="card__header">
-                <h4 class="card__title">Titulo del evento Titulo del evento Titulo del evento</h4>
-                <div class="card__date">
-                    <p>Fecha</p>
-                    <img src="icons/fecha__icono.png" alt="icono de calendario">
-                </div>
-            </div>
-            <div class="card__location">
-                <p>Ubicacion</p>
-                <img src="icons/ubicacion_icono.png" alt="icono de ubicacion">
-            </div>
-            <p class="card__precio"> $ Precio</p>
-            <a href="../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
-        </div>
     </main>
     <footer>
         <div class="footer__menu">
@@ -97,7 +80,7 @@
         <p>© 2021 TicketMaster</p>
     </footer>
     <script src="../js/home.js"></script>
-
+    <script src="/frontend/js/sale.js"></script>
 </body>
 
 </html>

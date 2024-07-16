@@ -10,7 +10,7 @@ header{
 }
 
 .header {
-    background-image: url('/public/images/fondo.avif');
+    background-image: url('/frontend/public/images/fondo.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,11 +58,23 @@ header{
                 outline: none;
             }
         }
+        .navbar--derecha{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            li{
+                margin: 0 16px;
+            
+            }
+        }
     }
 
     img {
         width: 24px;
         height: 24px;
+    }
+    #logout{
+        display: none;
     }
 }
 

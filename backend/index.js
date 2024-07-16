@@ -6,7 +6,7 @@ import User from './models/user.js';
 import DriverId from './models/driver-id.js';
 import Evento from './models/eventos.js';
 import Entrada from './models/entradas.js';
-import Reventa from './models/reventas.js';
+import BoletosReventa from './models/boletosReventa.js';
 import cors from 'cors';
 import { genSaltSync, hashSync } from 'bcryptjs';
 import bcrypt from 'bcryptjs';
@@ -214,11 +214,13 @@ app.get('/eventos/:eventoId', async (req, res) => {
 
 //-------------------------------------------------------------------------------
 // Rutas para Entradas
-
 app.post('/entradas', async (req, res) => {
     try {
         const nuevaEntrada = new Entrada(req.body);
+        console.log(nuevaEntrada)
+        console.log(req.body)
         await nuevaEntrada.save();
+        
         res.status(201).json(nuevaEntrada);
         console.log('Entrada guardado:');
     } catch (error) {
@@ -376,8 +378,30 @@ app.get('/eventos/usuario/:idUsuario', async (req, res) => {
 });
 
 //-----------------------------------------------------------------------------
-// Rutas para Reventas
+// ----- ver todos las reventas 
+// ----- " reventa " -----
+app.get('/boletosReventa', async (req, res) => {
+    try {
+        const reventas = await BoletosReventa.find();
+        res.json(reventas);
+        console.log('Mostrando Reventa');
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
 
+app.get('/eventos', async (req, res) => {
+    try {
+        const eventos = await Evento.find();
+        res.json(eventos);
+        console.log('Mostrando Evento');
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
+// Rutas para Reventas
 app.post('/reventas', async (req, res) => {
     try {
         const nuevaReventas = new Reventa(req.body);
@@ -388,19 +412,3 @@ app.post('/reventas', async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
-
-// ----- ver todos las reventas 
-// ----- " reventa " -----
-app.get('/reventas', async (req, res) => {
-    try {
-        const reventas = await Reventa.find();
-        res.json(reventas);
-        console.log('Mostrando Reventa');
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
-console.log("falta actualizar boletos revendidos");
-
-// Iniciar el servidor
-// app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));

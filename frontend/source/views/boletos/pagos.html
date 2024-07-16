@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+    <link rel="stylesheet" href="/frontend/public/css/styles.css">
+</head>
+<body>
+    <section class="pago__boleto">
+        <section class="pago__info">
+           
+        </section>
+        <section class="pago__metodos">
+            <section class="pago__metodos--tarjeta">
+                <form class="tarjeta__datos form pago">
+                    <h2>DATOS DE TU TARJETA</h2>
+                    <input class="form__input" type="text" placeholder="Número de tarjeta" name="infoTarjeta">
+                    <input class="form__input" type="text" placeholder="Nombre del titular" name="infoTarjeta">
+                    <input class="form__input" type="text" placeholder="Fecha de expiración" name="infoTarjeta">
+                    <input class="form__input" type="text" placeholder="Código de seguridad" name="infoTarjeta">
+                    <input type="submit" class="btn btn-principal" id="pagar__btn" value="Pagar">
+                    <a href="/frontend/public/index.html" class="btn btn-secundario">Cancelar</a>
+                </form>
+            </section>
+        </section>
+    </section>
+    <script src="/frontend/js/pagos.js"></script>
+</body>
+</html>

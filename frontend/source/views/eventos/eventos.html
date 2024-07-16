@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revender</title>
+    <title>Evento</title>
     <link rel="stylesheet" href="../../../public/css/styles.css">
 </head>
 
@@ -12,23 +12,20 @@
     <header>
         <section class="header__navBar header__navBar--blanco">
             <nav>
-                <li><img src="../../../public/icons/hamburguesa.png" alt="icono de menu"></li>
-                <li><a href="../../../public/index.html">Logo</a></li>
+                <li><a href="/frontend/public/index.html">Logo</a></li>
                 <li>
-                    <a id="link_UserName" href="../../../source/views/user/profile.html">UserName</a>
+                    <a id="link_UserName" href="../source/views/user/profile.html">UserName</a>
                 </li>
                 <li>
-                    <img src="../../../public/icons/logout.png" alt="">
+                    <a href="/frontend/source/views/auth/login.html">Iniciar Sesion</a>
+                </li>
+                <li>
+                    <img src="/icons/logoutBlanco.png" alt="icono del logout" id="logout">
                 </li>
             </nav>
         </section>
     </header>
-    <section class="banner contenedor">
-        <h2 class="banner__title">Reventa</h2>
-        <p class="banner__descirption">Navega por nuestra selección y asegura tu entrada para conciertos, partidos,
-            obras de teatro y más. No dejes pasar la oportunidad de vivir experiencias inolvidables. ¡Compra tus boletos
-            de reventa hoy mismo y no te quedes fuera!</p>
-    </section>
+
 
     <section class="event contenedor">
         <img class="event__img" src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento">
@@ -38,55 +35,26 @@
             <div class="card__location">
                 <p>Ubicacion</p>
                 <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-            </div>`
+            </div>
             <div class="card__date">
                 <p>Fecha</p>
                 <img src="../../../public/icons/fecha__icono.png" alt="icono de calendario">
             </div>
-            <p class="data__type">VIP</p>
-            <p class="price">$ Precio</p>
-            <input class="btn btn-principal btn__resale" id="" type="button" value="Comprar">
-        </div>
-    </section>
-    <section class="event contenedor">
-        <img class="event__img" src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento">
-        <div class="event__data">
-            <h2 class="data__title">Titulo del evento</h2>
-            <p class="data__description">Descripcion</p>
-            <div class="card__location">
-                <p>Ubicacion</p>
-                <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-            </div>`
-            <div class="card__date">
-                <p>Fecha</p>
-                <img src="../../../public/icons/fecha__icono.png" alt="icono de calendario">
+            <!-- <div class="event__ticket">
+                <input type="checkbox" name="" id="input__seleccion">
+                <p>VIP</p>
+                <input id="input__cantidad" type="number" max="5">
             </div>
-            <p class="data__type">VIP</p>
-            <p class="data__price">$ Precio</p>
+            <div class="event__ticket">
+                <input type="checkbox" name="" id="input__seleccion">
+                <p>General</p>
+                <input id="input__cantidad" type="number" max="5">
+            </div> -->
             <p class="price">$</p>
-            <input class="btn btn-principal btn__resale" id="" type="button" value="Comprar">
+            <a href="/frontend/source/views/boletos/pagos.html" class="btn btn-principal" id="btn__comprar">Comprar</a>
         </div>
     </section>
-    <section class="event contenedor">
-        <img class="event__img" src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento">
-        <div class="event__data">
-            <h2 class="data__title">Titulo del evento</h2>
-            <p class="data__description">Descripcion</p>
-            <div class="card__location">
-                <p>Ubicacion</p>
-                <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
-            </div>`
-            <div class="card__date">
-                <p>Fecha</p>
-                <img src="../../../public/icons/fecha__icono.png" alt="icono de calendario">
-            </div>
-            <p class="data__type">VIP</p>
-            <p class="data__price">$ Precio</p>
-            <p class="price">$</p>
-            <input class="btn btn-principal btn__resale" id="" type="button" value="Comprar">
-        </div>
-    </section>
-    <h3>Eventos Relacionados</h3>
+    <!-- <h3>Eventos Relacionados</h3>
     <section class="events contenedor">
         <div class="card">
             <img src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
@@ -103,7 +71,7 @@
                 <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
             </div>
             <p class="card__precio"> $ Precio</p>
-            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+            <a href="../../../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
         </div>
         <div class="card">
             <img src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
@@ -120,7 +88,7 @@
                 <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
             </div>
             <p class="card__precio"> $ Precio</p>
-            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+            <a href="../../../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
         </div>
         <div class="card">
             <img src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
@@ -137,7 +105,7 @@
                 <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
             </div>
             <p class="card__precio"> $ Precio</p>
-            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+            <a href="../../../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
         </div>
         <div class="card">
             <img src="../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" alt="imagen del evento"
@@ -154,9 +122,9 @@
                 <img src="../../../public/icons/ubicacion_icono.png" alt="icono de ubicacion">
             </div>
             <p class="card__precio"> $ Precio</p>
-            <input type="button" class="btn btn-principal card__btn" value="Ver Mas...">
+            <a href="../../../source/views/events/event.html" class="btn btn-principal card__btn">Ver Mas...</a>
         </div>
-    </section>
+    </section> -->
     <footer>
         <div class="footer__menu">
             <li><a href="../../../public/index.html">Inicio</a></li>
@@ -174,8 +142,9 @@
         <hr>
         <p>© 2021 TicketMaster</p>
     </footer>
-    <script src="../../../js/rasale.js"></script>
-
+    <script src="../../../js/event.js"></script>
+    <script src="/frontend/js/pagos.js"></script>
+    <script src="/frontend/js/boletosReventa.js"></script>
 </body>
 
 </html>
