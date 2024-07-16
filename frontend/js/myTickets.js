@@ -56,6 +56,8 @@
                 }
             },
 
+            // ***************************************************************
+
             createEventElement(evento) {
                 // Crear el contenedor principal del evento
                 const eventSection = document.createElement('section');
@@ -64,7 +66,7 @@
                 // Imagen del evento
                 const img = document.createElement('img');
                 img.className = 'event__img';
-                img.src = '../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg'; // Aquí puedes cambiar la imagen si es necesario
+                img.src = '../../../public/images/noiseporn-JNuKyKXLh8U-unsplash.jpg'; // imagen
                 img.alt = 'imagen del evento';
                 eventSection.appendChild(img);
 
@@ -91,7 +93,7 @@
                 const locationText = document.createElement('p');
                 locationText.textContent = evento.Ubicacion;
                 const locationIcon = document.createElement('img');
-                locationIcon.src = '../../../public/icons/ubicacion_icono.png';
+                locationIcon.src = '../../../public/iconos/ubicacion_icono.png';
                 locationIcon.alt = 'icono de ubicacion';
                 locationDiv.appendChild(locationText);
                 locationDiv.appendChild(locationIcon);
@@ -110,7 +112,7 @@
                     year: 'numeric'
                 });
                 const dateIcon = document.createElement('img');
-                dateIcon.src = '../../../public/icons/fecha__icono.png';
+                dateIcon.src = '../../../public/iconos/fecha__icono.png';
                 dateIcon.alt = 'icono de calendario';
                 dateDiv.appendChild(dateText);
                 dateDiv.appendChild(dateIcon);

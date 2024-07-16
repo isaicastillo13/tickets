@@ -217,13 +217,18 @@ app.get('/eventos/:eventoId', async (req, res) => {
 app.post('/entradas', async (req, res) => {
     try {
         const nuevaEntrada = new Entrada(req.body);
-        console.log(nuevaEntrada)
-        console.log(req.body)
         await nuevaEntrada.save();
-        
-        res.status(201).json(nuevaEntrada);
-        console.log('Entrada guardado:');
+        res.status(201).json({
+            evento: nuevaEntrada,
+            message: 'ENTRADA CREADO correctamente'
+        });
+        console.log("Nueva entrada guardada:", nuevaEntrada)
+        // console.log(req.body)
+
+        // res.status(201).json('Entrada guardada:', nuevaEntrada);
+        // console.log('Entrada guardado:');
     } catch (error) {
+        console.error('Error al guardar la entrada:', error);
         res.status(400).json({ message: error.message });
     }
 });

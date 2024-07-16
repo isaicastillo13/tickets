@@ -74,7 +74,7 @@
             // ********** MIS BOLETOS **********
             async redirctMyTickets() {
                 console.log("click en ir a mis boletos");
-                window.location.href = `/frontend/source/views/boletos/misBoletos.html`; // redirecciona al index 
+                window.location.href = `../../views/boletos/misBoletos.html`; // redirecciona al index 
             },
 
             // async GetTicketUserData() {
