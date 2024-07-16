@@ -72,9 +72,22 @@ header{
     img {
         width: 24px;
         height: 24px;
+        filter: invert(1);
     }
     #logout{
         display: none;
+    }
+}
+
+.header--negro{
+    nav {
+        a {
+            color: $negro;
+        }
+
+        img{
+            filter: none;
+        }
     }
 }
 

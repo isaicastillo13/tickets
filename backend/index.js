@@ -217,7 +217,6 @@ app.get('/eventos/:eventoId', async (req, res) => {
 app.post('/entradas', async (req, res) => {
     try {
         const nuevaEntrada = new Entrada(req.body);
-        console.log(nuevaEntrada)
         console.log(req.body)
         await nuevaEntrada.save();
         
