@@ -21,7 +21,8 @@ const entradaSchema = new mongoose.Schema({
         default: Date.now
     },
     Cantidad: {
-        type: Number
+        type: Number,
+        default: 1
     },
     Precio: {
         type: Number,

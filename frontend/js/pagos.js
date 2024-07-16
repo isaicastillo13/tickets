@@ -18,21 +18,21 @@
                 App.methods.render(datosBoletos)
                 console.log(datosBoletos);
             },
-            pagarBoleto(e){
+            pagarBoleto(e) {
                 App.methods.pagarBoleto(e);
             }
         },
         methods: {
             render(datosBoletos) {
                 App.htmlElements.infoBoleto.innerHTML = `
-                 <h2>INFORMACION DE TU BOLETO</h2>
+                <h2>INFORMACION DE TU BOLETO</h2>
                 <p>Evento: ${datosBoletos.evento}</p>
                 <p>Ubicacion: ${datosBoletos.ubicacion}</p>
                 <p>Fecha: ${datosBoletos.fecha}</p>
                 <p>Precio: ${datosBoletos.precio}</p>
                 `
             },
-            pagarBoleto(e){
+            pagarBoleto(e) {
                 e.preventDefault();
                 for (let i = 0; i < App.htmlElements.datosTarjeta.length; i++) {
                     if (App.htmlElements.datosTarjeta[i].value === '') {
@@ -45,27 +45,44 @@
                 // localStorage.removeItem('boletoReventa');
                 // window.location.href = '/frontend/public/index.html';
             },
-            async guadarEntrada(){
+            async guadarEntrada() {
 
                 console.log('Guardando entrada');
                 let datosBoletos = JSON.parse(localStorage.getItem('boletoReventa'));
                 let userId = localStorage.getItem('userId');
+                const datosEntrada = {
+                    EventoID: datosBoletos.eventoId,
+                    UsuarioID: parseInt(userId),
+                    Precio: datosBoletos.precio,
+                    Cantidad: datosBoletos.cantidad || 1
+                };
+                console.log("Datos antes de enviar a API ->", JSON.stringify(datosEntrada, null, 2));
                 try {
-                    const datosEntrada = {
-                        eventoId: datosBoletos.eventoId,
-                        userId: parseInt(userId),
-                        precio: datosBoletos.precio
-                    };
-                    console.log(datosEntrada);
-                    const rowResponse = await fetch('http://localhost:3000/entradas', {
+                    // const datosEntrada = {
+                    //     eventoId: datosBoletos.eventoId,
+                    //     UsuarioId: parseInt(userId),
+                    //     precio: datosBoletos.precio
+                    // };
+                    const response = await fetch('http://localhost:3000/entradas', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(datosEntrada)
                     });
-                    const data = rowResponse.json();
-                    console.log(data);
-                }catch (error) {
+                    // const data = response.json();
+                    // console.log(data);
+                    //*************************
+                    const data = await response.json();
+                    console.log("datos respuesta de api -> " + data);
+                    if (!response.ok) {
+                        const errorData = await response.text();
+                        console.error('Error de login:', errorText);
+                        return
+                    }
+                    console.log("Datos respuesta de API ->", data);
+                    alert('Boleto pagado con éxito');
+                } catch (error) {
                     console.error('Error al guardar la entrada:', error);
+                    alert('Error al guardar la entrada: ' + error.message);
                 }
             }
         }

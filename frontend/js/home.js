@@ -4,7 +4,12 @@
         htmlElements: {
             userName: document.querySelector('.navbar--derecha .userName'),
             eventsMain: document.querySelector('#events__main'),
+
             pagina:document
+
+            iconLogout: document.querySelector('#logout'),
+            pagina: document
+
         },
         init() {
 
@@ -19,12 +24,13 @@
             pageReady(e) {
                 e.preventDefault(); // Prevenir la acción predeterminada
             },
-            closeSession(){
+            closeSession() {
                 App.methods.closeSession();
             }
 
         },
         methods: {
+
             async fetchEvents() {
                 try {
                     const response = await fetch('http://localhost:3000/eventos');
@@ -49,12 +55,20 @@
                             <h4 class="card__title">${evento.Titulo}</h4>
                             <div class="card__date">
                                 <p>${new Date(evento.FechaEvento).toLocaleDateString('es-ES')}</p>
+
                                 <img src="iconos/fecha__icono.png" alt="icono de calendario">
+
+                                <img src="./iconos/fecha__icono.png" alt="icono de calendario">
+
                             </div>
                         </div>
                         <div class="card__location">
                             <p>${evento.Ubicacion}</p>
+
                             <img src="iconos/ubicacion_icono.png" alt="icono de ubicacion">
+
+                            <img src="./iconos/ubicacion_icono.png" alt="icono de ubicacion">
+
                         </div>
                         <a href="../source/views/eventos/eventos.html?eventoId=${evento.EventoID}" class="btn btn-principal card__btn">Ver Evento</a>
 
@@ -63,7 +77,7 @@
                     App.htmlElements.eventsMain.appendChild(eventCard);
                 });
             },
-            renderNavbar(){
+            renderNavbar() {
 
             }
 
