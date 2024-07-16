@@ -332,7 +332,6 @@ body {
 }
 
 p {
-  font-family: "Urbanist", sans-serif;
   color: #18181B;
   font-size: 16px;
   margin: 0;
@@ -534,11 +533,6 @@ h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-transform: uppercase;
-}
-
-.card__location {
-  text-transform: uppercase;
 }
 
 .card {
@@ -680,11 +674,6 @@ main {
 }
 .event__ticket .icons {
   width: 16px;
-}
-
-.ticketResale {
-  display: flex;
-  justify-content: center;
 }
 
 .pago__boleto {
@@ -836,17 +825,9 @@ header {
 .header__navBar img {
   width: 24px;
   height: 24px;
-  filter: invert(1);
 }
 .header__navBar #logout {
   display: none;
-}
-
-.header--negro nav a {
-  color: #18181B;
-}
-.header--negro nav img {
-  filter: none;
 }
 
 .header__navBar--blanco {
