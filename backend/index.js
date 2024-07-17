@@ -226,6 +226,7 @@ app.get('/eventos/:eventoId', async (req, res) => {
 app.post('/entradas', async (req, res) => {
     try {
         const nuevaEntrada = new Entrada(req.body);
+
         await nuevaEntrada.save();
         res.status(201).json({
             evento: nuevaEntrada,
