@@ -16,6 +16,8 @@ config();
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
+const createOrder = require('./models/createOrder.js');
+
 app.use(express.json())
 app.use(cors());
 // Crear un modelo
@@ -41,7 +43,14 @@ mongoose.connect(Bun.env.MONGODB_URI)
 app.use(express.json());
 
 // *********************  Rutas  *********************
+//Ruta para PAYPAL
+app.post('/payment/create', async (req, res) => {
 
+    const { amount, description } = req.body; // Asegúrate de que estos valores se envían desde el cliente
+    const order = await createOrder(req, res);
+    res.json(order);
+
+});
 // --------------------------------------------------------------------------
 
 // Rutas para Usuarios
@@ -245,6 +254,7 @@ app.get('/entradas', async (req, res) => {
 
 // Ver todas las entradas de un usuario especifico, por UsuarioID
 // ----- " Mis Boletos " -----
+
 app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
     try {
         // Primero, encuentra el usuario por UsuarioID
@@ -253,27 +263,22 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
             return res.status(404).json({ message: "Usuario no encontrado" });
         }
 
-        // busca todos las entradas de este usuario
+        // Busca todas las entradas de este usuario
         const entradas = await Entrada.find({ UsuarioID: usuario.UsuarioID });
         if (entradas.length === 0) {
-            res.status(200).json({
-                message: " No tienes boletos, anímate y échale un vistazo a la cartelera de eventos disponibles, quizás haya algo para ti. "
+            return res.status(200).json({
+                message: "No tienes boletos, anímate y échale un vistazo a la cartelera de eventos disponibles, quizás haya algo para ti."
             });
-            // return res.status(404).json({ message: "No se encontraron ENTRADAS de este usuario" });
         }
 
         // Extrae los IDs de los eventos de las entradas
-        const eventoIds = entradas.map(entrada => entrada.EventoID);//corregido
+        const eventoIds = entradas.map(entrada => entrada.EventoID);
 
-        // const eventoIds = parseInt(entradas.map(entrada => entrada.EventoID));
-        // console.log(eventoIds)
-        const eventos = await Evento.find({ EventoID: { $in: eventoIds } });//corregido
-
-        // const eventos = await Evento.find({ EventoID: eventoIds });
+        // Busca los eventos correspondientes a los IDs de los eventos
+        const eventos = await Evento.find({ EventoID: { $in: eventoIds } });
 
         if (eventos.length === 0) {
-            // return res.status(404).json({ message: eventoIds });
-            return res.status(200).json({ message: "No se encontraron eventos para este ENTRADA" });
+            return res.status(200).json({ message: "No se encontraron eventos para esta entrada" });
         }
 
         // Prepara la respuesta con los datos del usuario y sus eventos
@@ -282,35 +287,105 @@ app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
                 UsuarioID: usuario.UsuarioID,
                 Nombre: usuario.Nombre
             },
-            Entrada: entradas.map(entrada => ({
-                EntradaID: entrada.EntradaID,
-                UsuarioID: entrada.UsuarioID,
-                EventoID: entrada.EventoID,
-                Cantidad: entrada.Cantidad,
-                Precio: entrada.Precio,
-                FechaCompra: entrada.FechaCompra,
-                //Titulo: entrada.Titulo,
-                //Descripcion: entrada.Descripcion,
-                //Ubicacion: entrada.Ubicacion
-            })),
-            Eventos: eventos.map(evento => ({
-                // UsuarioID: evento.UsuarioID,
-                EventoID: evento.EventoID,
-                Titulo: evento.Titulo,
-                Descripcion: evento.Descripcion,
-                FechaEvento: evento.FechaEvento,
-                Ubicacion: evento.Ubicacion,
-                Precio: evento.Precio
-            }))
+            Entrada: entradas.flatMap(entrada => {
+                const evento = eventos.find(evento => evento.EventoID === entrada.EventoID);
+                if (evento) {
+                    // Duplicar entradas según la cantidad comprada
+                    return Array.from({ length: entrada.Cantidad }, () => ({
+                        EntradaID: entrada.EntradaID,
+                        UsuarioID: entrada.UsuarioID,
+                        EventoID: entrada.EventoID,
+                        Cantidad: 1, // Cada entrada duplicada tiene cantidad 1
+                        Precio: entrada.Precio,
+                        FechaCompra: entrada.FechaCompra,
+                        Evento: {
+                            EventoID: evento.EventoID,
+                            Titulo: evento.Titulo,
+                            Descripcion: evento.Descripcion,
+                            FechaEvento: evento.FechaEvento,
+                            Ubicacion: evento.Ubicacion,
+                            Precio: evento.Precio
+                        }
+                    }));
+                }
+                return [];
+            })
         };
 
         console.log('Mostrando Entrada', respuesta);
         return res.json(respuesta);
-        // res.json(respuesta);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
+
+
+// app.get('/eventos/entradas/usuario/:idUsuario', async (req, res) => {
+//     try {
+//         // Primero, encuentra el usuario por UsuarioID
+//         const usuario = await User.findOne({ UsuarioID: req.params.idUsuario });
+//         if (!usuario) {
+//             return res.status(404).json({ message: "Usuario no encontrado" });
+//         }
+
+//         // busca todos las entradas de este usuario
+//         const entradas = await Entrada.find({ UsuarioID: usuario.UsuarioID });
+//         if (entradas.length === 0) {
+//             res.status(200).json({
+//                 message: " No tienes boletos, anímate y échale un vistazo a la cartelera de eventos disponibles, quizás haya algo para ti. "
+//             });
+//             // return res.status(404).json({ message: "No se encontraron ENTRADAS de este usuario" });
+//         }
+
+//         // Extrae los IDs de los eventos de las entradas
+//         const eventoIds = entradas.map(entrada => entrada.EventoID);//corregido
+
+//         // const eventoIds = parseInt(entradas.map(entrada => entrada.EventoID));
+//         // console.log(eventoIds)
+//         const eventos = await Evento.find({ EventoID: { $in: eventoIds } });//corregido
+
+//         // const eventos = await Evento.find({ EventoID: eventoIds });
+
+//         if (eventos.length === 0) {
+//             // return res.status(404).json({ message: eventoIds });
+//             return res.status(200).json({ message: "No se encontraron eventos para este ENTRADA" });
+//         }
+
+//         // Prepara la respuesta con los datos del usuario y sus eventos
+//         const respuesta = {
+//             Usuario: {
+//                 UsuarioID: usuario.UsuarioID,
+//                 Nombre: usuario.Nombre
+//             },
+//             Entrada: entradas.map(entrada => ({
+//                 EntradaID: entrada.EntradaID,
+//                 UsuarioID: entrada.UsuarioID,
+//                 EventoID: entrada.EventoID,
+//                 Cantidad: entrada.Cantidad,
+//                 Precio: entrada.Precio,
+//                 FechaCompra: entrada.FechaCompra,
+//                 //Titulo: entrada.Titulo,
+//                 //Descripcion: entrada.Descripcion,
+//                 //Ubicacion: entrada.Ubicacion
+//             })),
+//             Eventos: eventos.map(evento => ({
+//                 // UsuarioID: evento.UsuarioID,
+//                 EventoID: evento.EventoID,
+//                 Titulo: evento.Titulo,
+//                 Descripcion: evento.Descripcion,
+//                 FechaEvento: evento.FechaEvento,
+//                 Ubicacion: evento.Ubicacion,
+//                 Precio: evento.Precio
+//             }))
+//         };
+
+//         console.log('Mostrando Entrada', respuesta);
+//         return res.json(respuesta);
+//         // res.json(respuesta);
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// });
 
 // Ruta para actualizar datos de entrada
 // para actualizar UsuarioID cuando se efctua la reventa
